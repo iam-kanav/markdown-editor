@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/icon256.png">
+    <title>Markdown Editor & Preview</title>
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="css/base.css">
+    <!-- Theme Styles (start with default) -->
+    <link id="theme-link" rel="stylesheet" href="css/theme-default.css">
+
+    <!-- Highlight.js CSS (start with one matching the default theme) -->
+    <!-- *** ADD AN ID HERE *** -->
+    <link id="highlight-theme-link" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <!-- We will change the href attribute of this link via JS -->
+
+</head>
+<body>
+    <div class="toolbar">
+        <label for="theme-select">Theme:</label>
+        <select id="theme-select">
+            <option value="default">Default</option>
+            <option value="github">GitHub Dark</option> <!-- Renamed for clarity -->
+            <option value="dark">Dark</option>
+            <option value="academic">Academic</option>
+            <!-- Add more themes here -->
+        </select>
+        <button id="save-html-btn">Save HTML</button>
+        <button id="save-pdf-btn">Save PDF</button>
+    </div>
+
+    <div class="editor-container">
+        <div class="pane input-pane">
+            <textarea id="markdown-input" placeholder="Paste your Markdown here..."></textarea>
+        </div>
+        <div class="pane output-pane">
+            <div id="html-output" class="markdown-body">
+                <!-- Rendered HTML will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <!-- markdown-it (Using jsDelivr) -->
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
+    <!-- highlight.js Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- Your Application Logic -->
+    <script src="js/app.js" defer></script>
+</body>
+</html>
